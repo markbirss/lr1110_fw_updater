@@ -6,7 +6,8 @@
 // include the firmware image
 #include <modules/LR11x0/LR11x0_firmware.h>
 
-LR1110 radio = new Module((32 + 13), (32 + 12), (32 + 11), (32 + 10));
+//LR1110 radio = new Module((32 + 13), (32 + 12), (32 + 11), (32 + 10));
+LR1110 radio = new Module(LR1110_SPI_NSS_PIN, LR1110_IRQ_PIN, LR1110_NRESER_PIN, LR1110_BUSY_PIN));
 
 void enterDfuMode()
 {
