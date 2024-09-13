@@ -6,8 +6,7 @@
 // include the firmware image
 #include <modules/LR11x0/LR11x0_firmware.h>
 
-//LR1110 radio = new Module((32 + 13), (32 + 12), (32 + 11), (32 + 10));
-LR1110 radio = new Module(LR1110_SPI_NSS_PIN, LR1110_IRQ_PIN, LR1110_NRESER_PIN, LR1110_BUSY_PIN));
+LR1110 radio = new Module(LR1110_SPI_NSS_PIN, LR1110_IRQ_PIN, LR1110_NRESER_PIN, LR1110_BUSY_PIN);
 
 void enterDfuMode()
 {
@@ -52,7 +51,7 @@ void setup()
 {
   Serial.begin(115200);
   while ( !Serial ) delay(10);   // for nrf52840 with native usb
-  Serial.println("ME25LS01-4Y10TD LR1110 Modem firmware updater to Base: 4.1 WiFi: 3.2 GNSS: 2.0");
+  Serial.println("LR11x0 Modem firmware updater");
   Serial.println();
 
   // initialize LR1110 with default settings
